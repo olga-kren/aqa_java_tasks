@@ -12,7 +12,7 @@ public class Task3 {
         String s = "Olga";
         int i = 5;
         while (i>0){
-            int j = +10;
+            int j = 9;
             while (j>0){
                 System.out.print(s+" ");
                 j--;
