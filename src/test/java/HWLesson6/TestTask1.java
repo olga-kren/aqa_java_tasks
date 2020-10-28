@@ -1,4 +1,4 @@
-package test.java;
+package test.java.HWLesson6;
 
 import main.java.lesson1.Task1;
 import org.testng.annotations.DataProvider;

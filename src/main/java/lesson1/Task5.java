@@ -12,7 +12,7 @@ public class Task5 {
         char[] array = str.toCharArray();
         String result = "";
         for (int i = array.length - 1; i >= 0; i--) {
-            result += array[i];
+            result = result + array[i];
         }
         return result;
     }
