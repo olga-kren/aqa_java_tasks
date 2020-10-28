@@ -1,6 +1,6 @@
 package test.java;
 
-import lesson1.Task1;
+import main.java.lesson1.Task1;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

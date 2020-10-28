@@ -1,4 +1,4 @@
-package lesson1;
+package main.java.lesson1;
 
 /**
  * Реализовать функцию, которая принимает строку и возвращает ее же в обратном виде
@@ -12,7 +12,7 @@ public class Task5 {
         char[] array = str.toCharArray();
         String result = "";
         for (int i = array.length - 1; i >= 0; i--) {
-            result = result + array[i];
+            result += array[i];
         }
         return result;
     }
