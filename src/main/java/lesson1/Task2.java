@@ -1,4 +1,4 @@
-package lesson1;
+package main.java.lesson1;
 
 /* Мое имя
 Вывести на экран свое имя 5 строк по 10 раз (через пробел).
@@ -8,12 +8,15 @@ System.out.println, System.out.print можно использовать тол�
 
 public class Task2 {
 
-    public static void main(String[] args) {
-        String s = "Olga";
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j < 9; j++){
-                System.out.print(s+" ");}
-            System.out.println(s);
+    public static String getNames() {
+        String result = "";
+        String s = "Olga ";
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 10; j++) {
+                result += s;
+            }
+            result += "\n";
         }
+        return result;
     }
 }
