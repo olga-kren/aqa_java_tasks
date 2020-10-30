@@ -21,7 +21,7 @@ public class TaskLesson7 {
         todayDealsBtn.click();
         Thread.sleep(2000);
         //find See details button and click
-        By seeDetails = By.xpath("//*[@id='100 6176b4de']");
+        By seeDetails = By.xpath("//*[@id='100 c3103f76-announce']");
         WebElement seeDetailsBtn = driver.findElement(seeDetails);
         seeDetailsBtn.click();
         Thread.sleep(2000);
