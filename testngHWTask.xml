@@ -3,7 +3,7 @@
 <suite name="TestTaskSuite">
     <test name="TestTask">
         <classes>
-            <class name="test.java.HWLesson6.TestTask2"/>
+            <class name="test.java.HWLesson8.HWLesson8"/>
         </classes>
     </test>
 </suite>

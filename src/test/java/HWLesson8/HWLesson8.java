@@ -8,7 +8,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
+
 
 import static org.testng.Assert.assertEquals;
 
@@ -21,6 +23,7 @@ public class HWLesson8 {
     By nameInputBy = By.cssSelector("#ap_customer_name");
     By emailInputBy = By.cssSelector("#ap_email");
     By passwordBy = By.cssSelector("#ap_password");
+    By passwordCheckBy = By.cssSelector("#ap_password_check");
 //    By nameAlertBy = By.id("auth-customerName-missing-alert");
 //    By emailAlertBy = By.id("auth-email-missing-alert");
 //    By passAlertBy = By.id("auth-password-missing-alert");
@@ -33,15 +36,21 @@ public class HWLesson8 {
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, 10, 500);
     }
-    @Test
-    public void CreateAccountTest(){
+    public void openCreateAccountFlow(){
         driver.get("https://www.amazon.com/");
         WebElement signInBtn = driver.findElement(signInBy);
         signInBtn.click();
         WebElement createYourAccountBtn = driver.findElement(createYourAccountBy);
         createYourAccountBtn.click();
+    }
+    public void clickCreateAccountBtn2(){
         WebElement createYourAccount2Btn = driver.findElement(createYourAccount2By);
         createYourAccount2Btn.click();
+    }
+    @Test
+    public void CreateAccountTest(){
+        openCreateAccountFlow();
+        clickCreateAccountBtn2();
         WebElement nameInput = driver.findElement(nameInputBy);
         WebElement emailInput = driver.findElement(emailInputBy);
         WebElement passwordInput = driver.findElement(passwordBy);
@@ -62,8 +71,23 @@ public class HWLesson8 {
         assertEquals(passAlert.getText(), "Enter your password");
 
     }
+    @Test
+    public void CreateAccountTest2(){
+        openCreateAccountFlow();
+        driver.findElement(nameInputBy).sendKeys("somename");
+        driver.findElement(emailInputBy).sendKeys("somemail@mail.com");
+        driver.findElement(passwordBy).sendKeys("qwerty");
+        clickCreateAccountBtn2();
+        WebElement passwordCheck = driver.findElement(passwordCheckBy);
+        WebElement passwordCheckAlert = driver.findElement(By.id("auth-passwordCheck-missing-alert"));
+        String actualPassCheckBorderClr = passwordCheck.getCssValue("border-color");
+
+        assertEquals(actualPassCheckBorderClr, expectedBorderColor);
+        assertEquals(passwordCheckAlert.getText(),"Type your password again");
+    }
     @AfterMethod
        public void finalizeBrowser() {
-       driver.quit();
+        driver.quit();
     }
+
 }
