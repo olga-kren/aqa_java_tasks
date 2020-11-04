@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 
@@ -24,11 +23,9 @@ public class HWLesson8 {
     By emailInputBy = By.cssSelector("#ap_email");
     By passwordBy = By.cssSelector("#ap_password");
     By passwordCheckBy = By.cssSelector("#ap_password_check");
-//    By nameAlertBy = By.id("auth-customerName-missing-alert");
-//    By emailAlertBy = By.id("auth-email-missing-alert");
-//    By passAlertBy = By.id("auth-password-missing-alert");
 
     String expectedBorderColor = "rgb(221, 0, 0)";
+
     @BeforeMethod
     public void initializeBrowser() {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
