@@ -7,7 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class TestBaseSetup {
-    WebDriver driver;
+    public WebDriver driver;
 
 
     @BeforeMethod
