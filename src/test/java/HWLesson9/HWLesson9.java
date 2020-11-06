@@ -26,7 +26,7 @@ public class HWLesson9 extends TestBaseSetup {
                 .selectCellPhoneBtn();
 
 
-//        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=nav-search-dropdown-card]/div/div/span")));
+//        ;
 
 
     }

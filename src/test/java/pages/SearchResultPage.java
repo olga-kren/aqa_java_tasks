@@ -3,6 +3,7 @@ package test.java.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchResultPage {
@@ -18,6 +19,7 @@ public class SearchResultPage {
 
     public SearchResultPage selectCellPhoneBtn(){
         driver.findElement(selectCellPhonesBy).click();
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("#searchDropdownBox > option:nth-child(1)")));
         return this;
     }
 
