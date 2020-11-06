@@ -2,16 +2,33 @@ package test.java.HWLesson9;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import test.java.TestBaseSetup;
+import test.java.pages.HomePage;
+import test.java.pages.SearchResultPage;
 
 public class HWLesson9 extends TestBaseSetup {
-    By searchInputBy = By.id("twotabsearchtextbox");
+    HomePage homePage;
+    SearchResultPage searchResultPage;
+
+    @BeforeMethod
+    public void pageInitialize() {
+        homePage = new HomePage(driver);
+    }
 
     @Test
     public void searchIphoneTest(){
-        driver.get("https://www.amazon.com/");
-        WebElement searchInput = driver.findElement(searchInputBy);
-        searchInput.click();
+        homePage
+                .open()
+                .searchInputSubmit("iPhone");
+        searchResultPage
+                .selectCellPhoneBtn();
+
+
+//        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=nav-search-dropdown-card]/div/div/span")));
+
+
     }
+
 }
