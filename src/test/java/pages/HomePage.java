@@ -2,7 +2,6 @@ package test.java.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
@@ -21,10 +20,8 @@ public class HomePage {
         return this;
     }
     public HomePage searchInputSubmit(String text){
-        WebElement searchInput = driver.findElement(searchInputBy);
-        searchInput.sendKeys(text);
-        WebElement searchSubmitBtn = driver.findElement(searchSubmitBy);
-        searchSubmitBtn.click();
+        driver.findElement(searchInputBy).sendKeys(text);
+        driver.findElement(searchSubmitBy).click();
         return this;
     }
 

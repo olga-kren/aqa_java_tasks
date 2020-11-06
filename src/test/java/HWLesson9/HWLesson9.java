@@ -1,7 +1,5 @@
 package test.java.HWLesson9;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import test.java.TestBaseSetup;
@@ -14,7 +12,9 @@ public class HWLesson9 extends TestBaseSetup {
 
     @BeforeMethod
     public void pageInitialize() {
+
         homePage = new HomePage(driver);
+        searchResultPage = new SearchResultPage(driver);
     }
 
     @Test
