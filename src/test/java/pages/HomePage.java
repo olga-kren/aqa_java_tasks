@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
+    String iphone = "iphone";
     WebDriver driver;
     WebDriverWait wait;
     By searchInputBy = By.id("twotabsearchtextbox");

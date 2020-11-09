@@ -81,6 +81,7 @@ public class HWLesson8 {
 
         assertEquals(actualPassCheckBorderClr, expectedBorderColor);
         assertEquals(passwordCheckAlert.getText(),"Type your password again");
+
     }
     @AfterMethod
        public void finalizeBrowser() {
