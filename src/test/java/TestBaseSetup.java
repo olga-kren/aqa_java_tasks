@@ -8,8 +8,6 @@ import org.testng.annotations.BeforeMethod;
 
 public class TestBaseSetup {
     public WebDriver driver;
-    public String iphone = "iphone";
-
 
     @BeforeMethod
     public void initializeBrowser() {

@@ -11,6 +11,7 @@ public class HomePage {
     By searchInputBy = By.id("twotabsearchtextbox");
     By searchSubmitBy = By.xpath("//*[@id='nav-search-submit-text']/input");
 
+
     public HomePage(WebDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, 10, 500);
