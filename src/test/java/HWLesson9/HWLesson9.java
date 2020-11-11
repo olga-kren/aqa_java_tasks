@@ -6,9 +6,7 @@ import org.testng.annotations.Test;
 import test.java.TestBaseSetup;
 import test.java.pages.HomePage;
 import test.java.pages.SearchResultPage;
-
 import java.util.List;
-
 import static org.testng.Assert.assertTrue;
 
 public class HWLesson9 extends TestBaseSetup {
