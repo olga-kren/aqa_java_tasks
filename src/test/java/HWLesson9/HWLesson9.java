@@ -29,6 +29,7 @@ public class HWLesson9 extends TestBaseSetup {
 
         homePage
                 .searchInputSubmit(iphone);
+
         List<WebElement> searchIphoneList =
         searchResultPage
                 .selectAppleBoxBtn()
@@ -39,21 +40,23 @@ public class HWLesson9 extends TestBaseSetup {
                     searchResultPage
                             .getNameItem(searchItem)
                             .toLowerCase();
-            assertTrue(actualSearchIphoneResult.contains(iphone), "Search result should contains iPhone");
+            assertTrue(actualSearchIphoneResult.contains(iphone), "Search result contains iPhone");
         }
     }
     @Test
     public void samsungSearchTest(){
         homePage
                 .searchInputSubmit(samsung);
+
         List<WebElement> searchSamsungList =
             searchResultPage
                 .getResultList();
-    for ( WebElement searchItem: searchSamsungList) {
-        String actualSearchSamsungResult = searchResultPage
+
+        for ( WebElement searchItem: searchSamsungList) {
+            String actualSearchSamsungResult = searchResultPage
                 .getNameItem(searchItem)
                 .toLowerCase();
-        assertTrue(actualSearchSamsungResult.contains(samsung), "Search result should contains Samsung");
+            assertTrue(actualSearchSamsungResult.contains(samsung), "Search result contains Samsung");
     }
 }
 }
