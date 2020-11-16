@@ -18,6 +18,7 @@ public class TestBaseSetup {
 
     @AfterMethod
     public void finalizeBrowser() {
+
         driver.quit();
     }
 }

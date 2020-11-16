@@ -12,8 +12,6 @@ import static org.testng.Assert.assertTrue;
 public class HWLesson9 extends TestBaseSetup {
     HomePage homePage;
     SearchResultPage searchResultPage;
-    String iphone = "iphone";
-    String samsung = "samsung";
 
     @BeforeMethod
     public void pageInitialize() {
@@ -26,7 +24,7 @@ public class HWLesson9 extends TestBaseSetup {
     public void searchIphoneTest(){
 
         homePage
-                .searchInputSubmit(iphone);
+                .searchInputSubmit("iphone");
 
         List<WebElement> searchIphoneList =
         searchResultPage
@@ -38,13 +36,13 @@ public class HWLesson9 extends TestBaseSetup {
                     searchResultPage
                             .getNameItem(searchItem)
                             .toLowerCase();
-            assertTrue(actualSearchIphoneResult.contains(iphone), "Search result contains iPhone");
+            assertTrue(actualSearchIphoneResult.contains("iphone"), "Search result contains iPhone");
         }
     }
     @Test
     public void samsungSearchTest(){
         homePage
-                .searchInputSubmit(samsung);
+                .searchInputSubmit("samsung");
 
         List<WebElement> searchSamsungList =
             searchResultPage
@@ -54,7 +52,7 @@ public class HWLesson9 extends TestBaseSetup {
             String actualSearchSamsungResult = searchResultPage
                 .getNameItem(searchItem)
                 .toLowerCase();
-            assertTrue(actualSearchSamsungResult.contains(samsung), "Search result contains Samsung");
+            assertTrue(actualSearchSamsungResult.contains("samsung"), "Search result contains Samsung");
     }
 }
 }
