@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="TestTaskSuite">
+    <listeners>
+        <listener class-name="test.java.utils.Listener"/>
+        <listener class-name="test.java.utils.AnnotationTransformer"/>
+    </listeners>
+    <test name="TestTask">
+        <classes>
+            <class name="test.java.HWLesson11.HWLesson11"/>
+        </classes>
+    </test>
+</suite>
