@@ -3,6 +3,8 @@ package test.java;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestResult;
+import test.java.utils.Screenshots;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -17,8 +19,11 @@ public class TestBaseSetup {
     }
 
     @AfterMethod
-    public void finalizeBrowser() {
-
+    public void finalizeBrowser(ITestResult testResult) {
+        Screenshots screenshots = new Screenshots(driver);
+        screenshots.makeScreenshot(testResult);
         driver.quit();
-    }
+        }
+
+
 }

@@ -20,11 +20,6 @@ public class SearchResultPage {
     public List <WebElement> checkBoxesBrand;
     @FindBy(xpath = "(//i[@class='a-icon a-icon-extender-expand'])[2]")
     public WebElement clickSeeMore;
-    @FindBy(xpath = ("//span[@class='a-size-medium a-color-base a-text-normal']"))
-    public List<WebElement> searchNameList;
-
-
-
 
     By hpCheckBoxBy = By.xpath("//i[@class='a-icon a-icon-checkbox'])[1]");
     By selectAppleBoxBy = By.xpath("(//i[@class='a-icon a-icon-checkbox'])[1]");
@@ -47,11 +42,6 @@ public class SearchResultPage {
         driver.findElement(selectAppleBoxBy).click();
         return this;
     }
- /*   public SearchResultPage clickHpCheckBox(){
-        logger.info("Click on HP checkbox");
-        hpCheckBox.click();
-        return this;
-    }*/
     public SearchResultPage clickSeeMoreLabel(){
         logger.info("Click to expand checkbox list");
         wait.until(ExpectedConditions.elementToBeClickable(clickSeeMore));
@@ -61,6 +51,7 @@ public class SearchResultPage {
     public SearchResultPage clickCheckBoxes(String value){
         logger.info("Click proper checkbox");
         logger.warn("WARN: problem with checkbox");
+        logger.debug("DEBUG: Click proper checkbox");
         WebElement brandName =
                 driver.findElement(By.xpath(value));
         brandName.click();
@@ -73,31 +64,10 @@ public class SearchResultPage {
     }
     public String getNameItem(WebElement searchItem){
         logger.info("Find name of " + searchItem);
+        logger.error("ERROR: something goes wrong");
         List<WebElement> searchItemList = searchItem.findElements(searchItemListBy);
         searchItemList.toString();
         String actualSearchNameItem = searchItem.getText();
         return actualSearchNameItem;
     }
-/*
-    public SearchResultPage clickBrand (String brand) {
-        logger.info("Click Brand");
-        WebElement brandName =
-                driver.findElement(By.xpath("//li[@class='a-spacing-micro' and @aria-label='" + brand + "']"));
-
-        brandName.click();
-        return this;
-    }
-*/
-
-/*
-    public List<WebElement> getBrandList (){
-        checkBoxesBrand.toString();
-
-
-//        clickSeeMore.click();
-        return checkBoxesBrand;
-    }
-*/
-
-
 }
