@@ -20,6 +20,8 @@ public class SearchResultPage {
     public List <WebElement> checkBoxesBrand;
     @FindBy(xpath = "(//i[@class='a-icon a-icon-extender-expand'])[2]")
     public WebElement clickSeeMore;
+    @FindBy(xpath = "(//span[@class='a-size-base a-color-base'])[6]")
+    public WebElement clearCheckBox;
 
     By hpCheckBoxBy = By.xpath("//i[@class='a-icon a-icon-checkbox'])[1]");
     By selectAppleBoxBy = By.xpath("(//i[@class='a-icon a-icon-checkbox'])[1]");
@@ -46,6 +48,12 @@ public class SearchResultPage {
         logger.info("Click to expand checkbox list");
         wait.until(ExpectedConditions.elementToBeClickable(clickSeeMore));
         clickSeeMore.click();
+        return this;
+    }
+    public SearchResultPage clearSelection(){
+        logger.info("Clear selected checkbox");
+        wait.until(ExpectedConditions.elementToBeClickable(clearCheckBox));
+        clearCheckBox.click();
         return this;
     }
     public SearchResultPage clickCheckBoxes(String value){

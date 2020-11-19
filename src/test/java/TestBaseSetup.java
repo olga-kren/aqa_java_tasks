@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import test.java.utils.Screenshots;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,7 +14,7 @@ import org.testng.annotations.BeforeMethod;
 public class TestBaseSetup {
     public WebDriver driver;
 
-    @BeforeMethod
+    @BeforeClass
     public void initializeBrowser(ITestContext iTestContext) {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -20,7 +22,7 @@ public class TestBaseSetup {
         iTestContext.setAttribute("driver", driver);
     }
 
-    @AfterMethod
+    @AfterClass
     public void finalizeBrowser() {
 //        Screenshots screenshots = new Screenshots(driver);
 //        screenshots.makeScreenshot(testResult);
