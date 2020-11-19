@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import test.java.TestBaseSetup;
 import test.java.pages.HomePage;
 import test.java.pages.SearchResultPage;
+import test.java.utils.PropertyLoader;
+
 import java.util.List;
 import static org.testng.Assert.assertTrue;
 
@@ -23,7 +25,7 @@ public class HWLesson10 extends TestBaseSetup {
     public void searchLaptopPage (String brand, String value){
         homePage
                 .open()
-                .searchInputSubmit("laptop");
+                .searchInputSubmit(PropertyLoader.loadProperty("laptop"));
 
         searchResultPage
                 .clickSeeMoreLabel()

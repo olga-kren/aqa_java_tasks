@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import test.java.utils.PropertyLoader;
 
 public class HomePage {
     private Logger logger = LogManager.getLogger(HomePage.class);
@@ -32,7 +33,8 @@ public class HomePage {
 
     public HomePage open(){
         logger.info("Open Amazon home page");
-        driver.get("https://www.amazon.com/");
+        driver.get(PropertyLoader.loadProperty("url"));
+//        driver.get("https://www.amazon.com/");
         return this;
     }
     public HomePage searchInputSubmit(String text){

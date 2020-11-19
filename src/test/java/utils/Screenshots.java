@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Date;
-@Ignore
+
 public class Screenshots {
     private final String delimiter = System.getProperty("os.name").toLowerCase().contains("windows") ? "\\" : "/";
     private WebDriver driver;
