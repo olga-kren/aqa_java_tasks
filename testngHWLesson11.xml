@@ -3,11 +3,11 @@
 <suite name="TestTaskSuite">
     <listeners>
         <listener class-name="test.java.utils.Listener"/>
-        <listener class-name="test.java.utils.AnnotationTransformer"/>
+        <listener class-name="test.java.utils.DPAnnotationTransformer"/>
     </listeners>
     <test name="LaptopTest">
         <classes>
-            <class name="test.java.HWLesson10.HWLesson10"/>
+            <class name="test.java.HWLesson11.HWLesson11"/>
         </classes>
     </test>
 </suite>
