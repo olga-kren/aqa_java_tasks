@@ -3,11 +3,11 @@
 <suite name="TestTaskSuite" parallel="classes" thread-count="2">
     <listeners>
         <listener class-name="test.java.utils.Listener"/>
-        <listener class-name="test.java.utils.DPAnnotationTransformer"/>
+<!--        <listener class-name="test.java.utils.DPAnnotationTransformer"/>-->
     </listeners>
     <test name="LaptopTest">
         <classes>
-            <class name="test.java.HWLesson11.HWLesson11"/>
+            <class name="test.java.HWLesson13.HWLesson13"/>
         </classes>
     </test>
 </suite>
